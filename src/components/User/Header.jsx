@@ -5,7 +5,7 @@ function Header() {
   const navigate = useNavigate();
   return (
     <div>
-      <header  className="bg-warning text-black  py-1">
+      <header  className="bg-primary bg-opacity-50 text-white  py-1">
         <div class="container-fluid my-2">
           <div class="row">
             <div className="col-2">

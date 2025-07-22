@@ -1,53 +1,57 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../../components/User/Card";
 
 function Home() {
-  return (
-    <div class="bg-dark">
-      
-      <div class="container-fluid my-5 bg-dark">
-        <div class="row">
-           
-          <div class="col mx-4">
-            <Card title="Laptop" text="This is Dell Laptop" price="Price:1000RS" imgsrc="img\laptop.jpeg" />
-          </div>
-          <div class="col">
-            <Card title="Mouse" text="This is Gaming Mouse"price="Price:1000RS" imgsrc="img\mouse.jpeg" />
-          </div>
-          <div class="col">
-            <Card title="Keyboard" text="RGB keyboard" price="Price:1000RS"imgsrc="img\keyboard.jpeg" />
-          </div>
-          <div class="col">
-            <Card title="Airpods" text="Bass sound" price="Price:1000RS"imgsrc="img\airpods.jpeg" />
-          </div>
-          <div class="col">
-            <Card title="Powerbank" text="1000mah long last" price="Price:1000RS"imgsrc="img\powerbank.jpeg" />
-          </div>
-          
-        
-        </div>
-      </div>
-      <div class="container-fluid my-5 bg-dark" >
-        <div class="row">
-           
-          <div class="col mx-4">
-            <Card title="p1" text="details" price="Price:1000RS"imgsrc="img\mouse.jpeg" />
-          </div>
-          <div class="col">
-            <Card title="p1" text="details" price="Price:1000RS"imgsrc="img\powerbank.jpeg" />
-          </div>
-          <div class="col">
-            <Card title="p1" text="details" price="Price:1000RS"imgsrc="img\laptop.jpeg" />
-          </div>
-          <div class="col">
-            <Card title="p1" text="details" price="Price:1000RS"imgsrc="img\keyboard.jpeg" />
-          </div>
-          <div class="col">
-            <Card title="p1" text="details" price="Price:1000RS"imgsrc="img\airpods.jpeg" />
-          </div>
-        </div>
-      </div>
   
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/");
+      const data = await response.json();
+      
+      if (data.success) {
+        setProducts(data.products);
+      } else {
+        console.error("Failed to load products");
+      }
+     
+    } catch (err) {
+      console.error("Error fetching products:", err);
+  
+    }
+  };
+
+ 
+
+  return (
+    <div className="bg-white">
+      <div className="container-fluid my-5 bg-dark">
+        <div className="row">
+          {products.length > 0 ? (
+            products.map((product) => (
+              <div key={product.pd_id} className="col mx-4 mb-4">
+                <Card 
+                  pd_id={parseInt(product.pd_id)}
+                  title={product.name} 
+                  text={product.description} 
+                  price={`Price: Rs.${product.price}`}
+                  numericPrice={parseInt(product.price)}
+                  imgsrc={product.imageurl} 
+                />
+              </div>
+            ))
+          ) : (
+            <div className="col-12 text-center text-white">
+              <h3>No products found</h3>
+              <p>Please add some products to the database</p>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

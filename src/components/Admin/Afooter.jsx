@@ -4,7 +4,7 @@ function Afooter() {
   return (
     <div>
       <footer >
-        <div class="card bg-warning text-black ">
+        <div class="card bg-warning text-black"  >
           <div class="row">
           <div class="col mx-5">
             <p>

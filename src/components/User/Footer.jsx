@@ -4,27 +4,27 @@ function Footer() {
   return (
     <div>
       <footer >
-        <div class="card bg-warning text-black ">
-          <div class="row">
+        <div class="card bg-primary bg-opacity-50 text-white  ">
+          <div class="row my-2">
           <div class="col mx-5">
-            <p>
+            <h5>
               Contact:1234414
-            </p>
+            </h5>
           </div> 
           <div class="col">
-            <p>
+            <h5>
             FAQs
-            </p>
+            </h5>
           </div> 
             <div class="col">
-            <p class="card-text">
+            <h5 class="card-text">
               Location :Lahore
-            </p>
+            </h5>
             </div> 
             <div class="col">
-            <p>
+            <h5>
               copyright@:2025
-            </p>
+            </h5>
 </div>
 </div>
         

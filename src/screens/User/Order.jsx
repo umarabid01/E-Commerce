@@ -1,17 +1,49 @@
 import React from 'react'
+import {useState,useEffect} from 'react'
 import Card4 from '../../components/User/Card4'
 
 function Order(){
-    return(
-        <div>
-        <h1>this is order</h1>
-        <Card4 title="Mouse" text="This is Gaming Mouse"price="Price:1000RS" imgsrc="img\mouse.jpeg" />
-        <Card4 title="Powerbank" text="good battery"price="Price:1000RS" imgsrc="img\powerbank.jpeg" />
-        <Card4 title="Mouse" text="This is Gaming Mouse"price="Price:1000RS" imgsrc="img\mouse.jpeg" />
-        <Card4 title="Powerbank" text="good battery"price="Price:1000RS" imgsrc="img\powerbank.jpeg" />
-</div>
-    )
+
+  const [order,setorder]= useState([])
+
+  useEffect(()=> {fetch_order()},[])
+
+ const fetch_order=async()=>{
+  try{
+    const response=await fetch("http://localhost:5000/api/order")
+    const data= await response.json()
+if(data.success){
+  setorder(data.order)
 }
+else{
+  console.error("error occured")
+}
+  }
+  catch(err){
+    console.error(err)
 
+  }
+ }
+
+  return(
+    <div>
+      <h2 className="text-white mx-4">Showing Order</h2>
+      {order.length>0?
+      (order.map((
+        item,index)=>(
+        <Card4
+        key={item.o_id}
+        {...item}
+        status="confirmed"
+
+        />
+      ))
+
+      ):(
+        <h2 className="text-white">No Order </h2>
+      )}
+    </div>
+  )
+
+}
 export default Order
-
