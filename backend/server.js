@@ -63,7 +63,7 @@ app.post("/api/alogin", async (req, res) => {
     res.status(500).json({ success: false, message: "Database error" });
   }
 });
-// Add Product
+
 app.post("/api/aproduct", async (req, res) => {
   const { id, name, price, description, stock, category, image } = req.body;
   try {
