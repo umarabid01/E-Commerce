@@ -5,8 +5,7 @@ const { Client } = require("pg");
 
 const app=express();
 app.use(cors({
-  origin:
-  [
+  origin: [
     "https://merry-paprenjak-69ba68.netlify.app",
     "http://localhost:3000",
     "http://localhost:5000",
