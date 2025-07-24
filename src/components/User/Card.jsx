@@ -14,9 +14,9 @@ function Card(props) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          pd_id: props.pd_id,          
+          pd_id: props.pd_id,
           quantity: 1,
-          totalprice: props.numericPrice 
+          totalprice: props.numericPrice
         }),
       });
       const data = await response.json();
