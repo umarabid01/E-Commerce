@@ -6,8 +6,9 @@ const { Client } = require("pg");
 const app = express();
 app.use(cors({
   origin: [
-    "https://frabjous-lollipop-dfb781.netlify.app/", // replace with your actual Netlify URL
-    "http://localhost:3000" // allow local development
+    "https://frabjous-lollipop-dfb781.netlify.app", // your Netlify frontend
+    "http://localhost:3000",                        // local React dev
+    "https://e-commerce-nine-gamma-70.vercel.app"   // your Vercel backend (for server-to-server, optional)
   ]
 }));
 app.use(express.json());
