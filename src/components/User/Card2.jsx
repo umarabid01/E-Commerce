@@ -5,7 +5,7 @@ function Card2(props) {
   
   const increment = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/cart/increment", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/cart/increment`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
@@ -26,7 +26,7 @@ function Card2(props) {
   const decrement = async () => {
     if (quantity > 1) {
       try {
-        const response = await fetch("http://localhost:5000/api/cart/decrement", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/cart/decrement`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ 
@@ -47,7 +47,7 @@ function Card2(props) {
 
 const handleRemove=async() => {
   try{
-    const response = await fetch("http://localhost:5000/api/cart/remove", {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/cart/remove`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ 

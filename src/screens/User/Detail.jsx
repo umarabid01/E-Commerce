@@ -7,7 +7,7 @@ function Detail() {
 
   const addToCart = async () => {
     try {
-      const response = await fetch("https://e-commerce-nine-gamma-70.vercel.app/api/cart", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/cart`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

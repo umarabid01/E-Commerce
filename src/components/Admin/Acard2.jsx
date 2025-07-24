@@ -26,7 +26,7 @@ function Acard2() {
    const handleadd = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/aproduct", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/aproduct`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({id,name,price,description,stock,category,image }),
@@ -46,7 +46,7 @@ function Acard2() {
    const handleedit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/aproduct", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/aproduct`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({e_id,e_name,e_price,e_description,e_stock,e_category,e_image }),
@@ -67,7 +67,7 @@ function Acard2() {
   const handledelete = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/aproduct", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/aproduct`, {
         method:"DELETE",
         headers:{ "Content-Type": "application/json" },
         body: JSON.stringify({d_id}),
