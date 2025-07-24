@@ -6,7 +6,7 @@ const { Client } = require("pg");
 const app=express();
 app.use(cors({
   origin: [
-    "https://merry-paprenjak-69ba68.netlify.app",
+    "https://ecommerce-shopme.netlify.app",
     "http://localhost:3000",
     "http://localhost:5000",
     "https://e-commerce-nine-gamma-70.vercel.app"
