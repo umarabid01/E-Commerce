@@ -280,7 +280,7 @@ app.post("/api/billing", async (req, res) => {
 })
 
 app.get("/", (req, res) => {
-  res.send("Backend API is running!");
+  res.send("Backend API is running ,done pass!");
 });
 
 const PORT = process.env.PORT|| 5000;
