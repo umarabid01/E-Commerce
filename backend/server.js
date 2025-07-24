@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const { Client } = require("pg");
@@ -7,11 +8,11 @@ app.use(cors());
 app.use(express.json());
 
 const db = new Client({
-  host: "pg-shopme-multitalent-209b.j.aivencloud.com",
-  user: "avnadmin",
-  port: 24362,
-  password: "AVNS_bD8sPah1REtwoNtXfZU",
-  database: "defaultdb",
+ host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  port: process.env.DB_PORT,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
   ssl:{rejectUnauthorized:false }
 });
 
