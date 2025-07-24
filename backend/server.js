@@ -7,7 +7,7 @@ const app = express();
 app.use(cors({
   origin: [
     "https://frabjous-lollipop-dfb781.netlify.app", // your Netlify frontend
-    "http://localhost:5000",                        // local React dev
+    "http://localhost:3000",                        // local React dev
     "https://e-commerce-nine-gamma-70.vercel.app"   // your Vercel backend (for server-to-server, optional)
   ]
 }));
