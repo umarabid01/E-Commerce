@@ -7,7 +7,7 @@ const app = express();
 app.use(cors({
   origin: [
     "https://visionary-kringle-9cb408.netlify.app", // your updated Netlify frontend
-    "http://localhost:3000",                        // local React dev
+    "http://localhost:5000",                        // local React dev
     "https://e-commerce-nine-gamma-70.vercel.app"   // your Vercel backend (optional)
   ]
 }));
