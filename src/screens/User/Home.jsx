@@ -10,7 +10,7 @@ function Home() {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("https://e-commerce-nine-gamma-70.vercel.app/api/");
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/`);
       const data = await response.json();
       
       if (data.success) {
@@ -18,10 +18,8 @@ function Home() {
       } else {
         console.error("Failed to load products");
       }
-     
     } catch (err) {
       console.error("Error fetching products:", err);
-  
     }
   };
 
