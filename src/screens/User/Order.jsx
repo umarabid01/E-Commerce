@@ -10,7 +10,7 @@ function Order(){
 
  const fetch_order=async()=>{
   try{
-    const response=await fetch("http://localhost:5000/api/order")
+    const response=await fetch("https://e-commerce-nine-gamma-70.vercel.app/api/order")
     const data= await response.json()
 if(data.success){
   setorder(data.order)
