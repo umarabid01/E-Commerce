@@ -4,7 +4,12 @@ const cors = require("cors");
 const { Client } = require("pg");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://frabjous-lollipop-dfb781.netlify.app/", // replace with your actual Netlify URL
+    "http://localhost:3000" // allow local development
+  ]
+}));
 app.use(express.json());
 
 const db = new Client({
