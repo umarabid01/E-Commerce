@@ -77,7 +77,7 @@ const handleRemove=async() => {
           <img
             src={props.imgsrc}
             className="img-fluid rounded-start"
-            alt="Product image"
+            alt="Product"
             style={{ objectFit: "cover", height: "200px" }}
           />
         </div>

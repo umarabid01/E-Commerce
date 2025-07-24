@@ -35,7 +35,7 @@ function Card(props) {
       <img 
         src={props.imgsrc} 
         className="card-img-top" 
-        alt="Product image" 
+        alt="Product" 
         style={{ height: "170px", objectFit: "contain" }} 
         onClick={godetail}
       />

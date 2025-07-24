@@ -11,7 +11,7 @@ function Card4(props) {
           <img
             src={props.imageurl || props.imgsrc}
             className="img-fluid rounded-start"
-            alt="Product image"
+            alt="Product"
             style={{ height: "10rem", objectFit: "cover" }}
             
           />

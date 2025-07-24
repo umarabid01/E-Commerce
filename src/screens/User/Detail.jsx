@@ -39,7 +39,7 @@ function Detail() {
           <img 
             src={state.imgsrc} 
             className="img-fluid rounded-start" 
-            alt="Product image" 
+            alt="Product" 
             style={{ objectFit: "contain", border: "2px solid black", height: "395px" }}
           />
         </div>
