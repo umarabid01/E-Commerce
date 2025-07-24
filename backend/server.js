@@ -5,7 +5,9 @@ const { Client } = require("pg");
 
 const app = express();
 app.use(cors({
-  origin: [          // local React dev
+  origin: [
+     // your updated Netlify frontend
+    "http://localhost:5000",                        // local React dev
     "https://e-commerce-nine-gamma-70.vercel.app"   // your Vercel backend (optional)
   ]
 }));
