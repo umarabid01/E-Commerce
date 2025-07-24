@@ -83,6 +83,13 @@ function Login()
         >
           Sign up
         </button>
+        <button
+          type="button"
+          className="btn btn-primary mx-5"
+          onClick={() => navigate("/Alogin")}
+        >
+          Admin Login
+        </button>
       </form>
     </div>
   );
