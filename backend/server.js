@@ -130,7 +130,7 @@ app.get("/api/auser", async (req, res) => {
   }
 });
 
-app.get("/api/", async (req, res) => {
+app.get("https://e-commerce-nine-gamma-70.vercel.app/api/", async (req, res) => {
   try {
     const result = await db.query("SELECT * FROM products ORDER BY pd_id");
     res.json({ success: true, products: result.rows });
