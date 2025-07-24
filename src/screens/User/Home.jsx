@@ -10,7 +10,7 @@ function Home() {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("https://e-commerce-nine-gamma-70.vercel.app/api/");
+      const response = await fetch("https://e-commerce-nine-gamma-70.vercel.app/");
       const data = await response.json();
       
       if (data.success) {
