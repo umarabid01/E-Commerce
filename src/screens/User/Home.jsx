@@ -31,7 +31,7 @@ function Home() {
         <div className="row row-cols-auto ">
           {products.length > 0 ? (
             products.map((product) => (
-              <div key={product.pd_id} className="col  py-4 mx-2 ">
+              <div key={product.pd_id} className="col  py-4  ">
                 <Card 
                   pd_id={parseInt(product.pd_id)}
                   title={product.name} 
