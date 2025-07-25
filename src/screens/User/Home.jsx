@@ -27,11 +27,11 @@ function Home() {
 
   return (
     <div className="bg-white">
-      <div className="container-fluid my-5 bg-dark">
-        <div className="row">
+      <div className="container-fluid my-2 bg-dark ">
+        <div className="row row-cols-auto ">
           {products.length > 0 ? (
             products.map((product) => (
-              <div key={product.pd_id} className="col mx-4 mb-4">
+              <div key={product.pd_id} className="col  py-4 mx-2 ">
                 <Card 
                   pd_id={parseInt(product.pd_id)}
                   title={product.name} 

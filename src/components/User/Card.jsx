@@ -15,7 +15,7 @@ function Card(props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           pd_id: props.pd_id,
-          quantity: 1,
+          quantity:1,
           totalprice: props.numericPrice
         }),
       });
@@ -31,7 +31,7 @@ function Card(props) {
   };
   
   return (
-    <div className="card" style={{ border: "2px solid yellow", width: "13rem", cursor: "pointer" }}>
+    <div className="card" style={{ border: "3px solid yellow", width: "13rem", cursor: "pointer" }}>
       <img 
         src={props.imgsrc} 
         className="card-img-top" 

@@ -101,23 +101,29 @@ app.put("/api/aproduct", async (req, res) => {
     res.status(500).json({ success: false, message: "Database error: " + err.message });
   }
 });
+
+
+
 app.delete("/api/aproduct", async (req, res) => {
   const { d_id } = req.body;
-  try {
+  try{
+    await db.query("delete from order_details where pd_id=$1",[d_id])
     const result = await db.query(
       "DELETE FROM products WHERE pd_id = $1",
       [d_id]
     );
-    
-    if (result.rowCount > 0) {
+    if(result.rowCount>0){
+      
       res.json({ success: true, message: "Product deleted successfully" });
-    } else {
+    }else{
       res.status(404).json({ success: false, message: "Product not found" });
     }
   } catch (err) {
     res.status(500).json({ success: false, message: "Database error: " + err.message });
-  }
-});
+  }});
+
+
+
 
 app.get("/api/aallproducts", async (req, res) => {
   try {

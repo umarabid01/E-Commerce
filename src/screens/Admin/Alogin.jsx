@@ -37,7 +37,7 @@ function Alogin() {
 
   return (
     <div className="text-white d-flex flex-column min-vh-100 ">
-      <Aheader/>
+  
     <main className="flex-grow-1 my-4">
         
         
@@ -79,7 +79,7 @@ function Alogin() {
         </form>
         
       </main>
-      <Afooter/>
+     
     </div>
   );
 }

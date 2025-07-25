@@ -5,7 +5,7 @@ function Footer() {
     <div>
       <footer >
         <div class="card bg-primary bg-opacity-50 text-white  ">
-          <div class="row my-2">
+          <div class="row mx-1 my-2">
           <div class="col mx-5">
             <h5>
               Contact:1234414
